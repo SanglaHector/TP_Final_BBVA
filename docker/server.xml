@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+     Configuración de IBM WebSphere Liberty Server
+     Para aplicación CatalogoDeCamisetasV2
+     ================================================================ -->
+<server description="Catálogo de Camisetas V2 - Liberty Server">
+
+    <!-- ===== FEATURES (Características requeridas) ===== -->
+    <featureManager>
+        <feature>servlet-4.0</feature>
+        <feature>jsp-2.3</feature>
+        <feature>jaxrs-2.1</feature>
+        <feature>jsonb-1.0</feature>
+    </featureManager>
+
+    <!-- ===== HTTP ENDPOINT ===== -->
+    <httpEndpoint id="defaultHttpEndpoint"
+                  host="*"
+                  httpPort="8080"
+                  httpsPort="9443" />
+
+    <!-- ===== APPLICATION ===== -->
+    <application name="catalogodecamisetas"
+                 location="CatalogoDeCamisetasV2-0.0.1-SNAPSHOT.war"
+                 type="war">
+        <classloader delegation="parentLast" />
+    </application>
+
+    <!-- ===== LOGGING ===== -->
+    <logging traceSpecification="*=info" />
+
+    <logging
+        logDirectory="/var/log/wlp"
+        messageFileName="messages.log"
+        traceFileName="trace.log"
+        maxFileSize="50"
+        maxFiles="10"
+        consoleLogLevel="INFO" />
+
+    <!-- ===== SECURITY (Opcional) ===== -->
+    <!-- <httpSession id="defaultHttpSession"
+                      secureSessionCookie="true"
+                      httpOnlyCookies="true" /> -->
+
+    <!-- ===== THREAD POOL ===== -->
+    <executor name="DefaultExecutor"
+              coreThreads="2"
+              maxThreads="10"
+              maxQueueSize="0" />
+
+    <!-- ===== JNDI DATA SOURCE (Si es necesario para MongoDB) ===== -->
+    <!-- Este proyecto usa Spring Data MongoDB, no JNDI, pero aquí va la estructura -->
+
+    <!-- ===== MONITORING ===== -->
+    <webContainer enableCompression="true"
+                  extractHostHeader="true" />
+
+    <!-- ===== PERFORMANCE ===== -->
+    <webContainer HttpPersistentTimeout="60000" />
+
+</server>
+

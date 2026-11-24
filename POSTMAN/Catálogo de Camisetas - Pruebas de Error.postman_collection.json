@@ -1,0 +1,856 @@
+{
+  "info": {
+    "_postman_id": "1d978e9f-7714-4de9-9670-e1341acdb280",
+    "name": "Catálogo de Camisetas - Pruebas de Error",
+    "description": "Colección de peticiones diseñadas para inducir errores en los endpoints de Camisetas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58506375",
+    "_collection_link": "https://go.postman.co/collection/58506375-1d978e9f-7714-4de9-9670-e1341acdb280?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Camisetas - Errores de Validación",
+      "item": [
+        {
+          "name": "Crear Camiseta - Campo equipoId ausente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"temporada\": \"2023-2024\",\n  \"precio\": 60.00,\n  \"talle\": \"XL\",\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Camiseta - Campo precio ausente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023-2024\",\n  \"talle\": \"XL\",\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Camiseta - Campo talle ausente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023-2024\",\n  \"precio\": 60.00,\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Camiseta - Campo temporada ausente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"precio\": 60.00,\n  \"talle\": \"XL\",\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Camiseta - Precio negativo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023-2024\",\n  \"precio\": -50.00,\n  \"talle\": \"XL\",\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Camiseta - Stock negativo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023-2024\",\n  \"precio\": 60.00,\n  \"talle\": \"XL\",\n  \"stock\": -5,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Camiseta - Equipo ID inexistente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 99999,\n  \"temporada\": \"2023-2024\",\n  \"precio\": 60.00,\n  \"talle\": \"XL\",\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Camiseta - Precio con tipo de dato string",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023-2024\",\n  \"precio\": \"sesenta pesos\",\n  \"talle\": \"XL\",\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Camiseta - Stock con tipo de dato string",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023-2024\",\n  \"precio\": 60.00,\n  \"talle\": \"XL\",\n  \"stock\": \"tres piezas\",\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Camiseta - error formato temporada",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023/2024\",\n  \"precio\": 60.00,\n  \"talle\": \"XL\",\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Alta completa async - error en precio",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombrePais\": \"España\",\r\n  \"nombreCompeticion\": \"La Liga\",\r\n  \"nombreEquipo\": \"Real Madrid\",\r\n  \"tipo\": \"CLUB\",  // ✅ Válido\r\n  \"temporada\": \"2024-2025\",\r\n  \"precio\": -100,  // ❌ ESTO CAUSARÁ ERROR\r\n  \"talle\": \"L\",\r\n  \"stock\": 10,\r\n  \"marca\": \"Adidas\",\r\n  \"esRetro\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/workflow/altaCompletaAsync",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "workflow",
+                "altaCompletaAsync"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Camisetas - Errores de Recurso No Encontrado",
+      "item": [
+        {
+          "name": "Obtener Camiseta - ID inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/99999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "99999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Camiseta - ID negativo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/-1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "-1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Camiseta - ID cero",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/0",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Camiseta - ID alfanumérico",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/abc123",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "abc123"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Camiseta - ID inexistente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023-2024\",\n  \"precio\": 60.00,\n  \"talle\": \"XL\",\n  \"stock\": 20,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/99999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "99999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Camiseta - ID inexistente",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/99999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "99999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Camisetas - Errores en Filtrado",
+      "item": [
+        {
+          "name": "Filtrar por equipoId inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/equipo/99999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "equipo",
+                "99999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtrar por competicionId inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/competicion/99999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "competicion",
+                "99999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtrar por paisId inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/pais/99999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "pais",
+                "99999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtrar - equipoId negativo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/equipo/-1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "equipo",
+                "-1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtrar - marca vacía",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/buscar?marca=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "marca",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtrar - talle inválido",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/buscar?talle=XXXL",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "talle",
+                  "value": "XXXL"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Camisetas - Errores en Stock",
+      "item": [
+        {
+          "name": "Actualizar stock - ID inexistente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"stock\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/stock/99999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "stock",
+                "99999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar stock - Valor negativo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"stock\": -10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/stock/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "stock",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar stock - Stock ausente en body",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/stock/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "stock",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar stock - Stock con tipo de dato string",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"stock\": \"muchas piezas\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas/stock/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas",
+                "stock",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Camisetas - Errores de Contenido",
+      "item": [
+        {
+          "name": "JSON malformado",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023/2024\",\n  \"precio\": 60.00,\n  \"talle\": \"XL\",\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Body vacío",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Content-Type incorrecto",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"equipoId\": 12,\n  \"temporada\": \"2023/2024\",\n  \"precio\": 60.00,\n  \"talle\": \"XL\",\n  \"stock\": 3,\n  \"marca\": \"Adidas\",\n  \"esRetro\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/camisetas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "camisetas"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api"
+    }
+  ]
+}

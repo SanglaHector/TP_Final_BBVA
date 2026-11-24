@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  catalogodecamisetas-app:
+    container_name: catalogodecamisetas-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_MONGODB_URI: mongodb://hectorargentinosangla_db_user:pass@mongo-db:27017/tienda_camisetas?authSource=admin
+      SPRING_MONGODB_DATABASE: tienda_camisetas
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+    networks:
+      - catalogodecamisetas-network
+    restart: unless-stopped
+
+  mongo-db:
+    container_name: catalogodecamisetas-mongo
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hectorargentinosangla_db_user
+      MONGO_INITDB_ROOT_PASSWORD: pass
+      MONGO_INITDB_DATABASE: tienda_camisetas
+    volumes:
+      - mongodb_data:/data/db
+      - ./docker/mongo-init.js:/docker-entrypoint-initdb.d/init.js:ro
+    networks:
+      - catalogodecamisetas-network
+    restart: unless-stopped
+    command: --auth
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test -u hectorargentinosangla_db_user -p pass --authenticationDatabase admin --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  catalogodecamisetas-network:
+    driver: bridge
+
